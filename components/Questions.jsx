@@ -19,10 +19,12 @@ const Questions = ({
 
       const data = response.data.results;
 
-      // key property to be extracted from Flatlist
-      // data.forEach((item) => (item.key = String(Math.random() * 50)));
+      const newData = data.map(function (item) {
+        item.key = String(Math.floor(Math.random() * 200));
+        return item;
+      });
 
-      setQuestions(data);
+      setQuestions(newData);
     } catch (err) {
       console.log(err.message);
     }

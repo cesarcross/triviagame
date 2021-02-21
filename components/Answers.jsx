@@ -20,13 +20,11 @@ const Answers = ({ score, questions, questionIndex, navigation }) => {
         {score} {questions.length}
       </Text>
 
-      <Text>{questions.map((q) => q.question)}</Text>
-
-      {/* <FlatList
+      <FlatList
         data={questions}
         keyExtractor={(item) => item.key}
         renderItem={({ item }) => <Text>{item.question}</Text>}
-      /> */}
+      />
       <Button
         title='<--'
         onPress={() => navigation.navigate('Results')}

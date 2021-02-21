@@ -17,7 +17,6 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      {/* <SafeAreaView> */}
       <Stack.Navigator>
         <Stack.Screen name='Home' component={Home} styles={styles.container} />
         <Stack.Screen name='Questions'>
@@ -34,7 +33,15 @@ export default function App() {
           )}
         </Stack.Screen>
         <Stack.Screen name='Results'>
-          {(props) => <Results {...props} score={score} setScore={setScore} />}
+          {(props) => (
+            <Results
+              {...props}
+              score={score}
+              setScore={setScore}
+              setQuestions={setQuestions}
+              setQuestionIndex={setQuestionIndex}
+            />
+          )}
         </Stack.Screen>
         <Stack.Screen name='Answers'>
           {(props) => (
@@ -47,7 +54,6 @@ export default function App() {
           )}
         </Stack.Screen>
       </Stack.Navigator>
-      {/* </SafeAreaView> */}
     </NavigationContainer>
   );
 }

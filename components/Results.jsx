@@ -1,9 +1,17 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-const Results = ({ score, setScore, navigation }) => {
+const Results = ({
+  score,
+  setScore,
+  setQuestions,
+  setQuestionsIndex,
+  navigation,
+}) => {
   const handlePlayAgain = () => {
     setScore(0);
+    setQuestions([]);
+    setQuestionsIndex(0);
     navigation.navigate('Home');
   };
 
